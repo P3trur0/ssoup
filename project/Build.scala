@@ -8,7 +8,7 @@ object SSoup extends Build {
      organization := "org.filippodeluca.ssoup",
      name := "ssoup",
      version := "1.0-SNAPSHOT",
-     scalaVersion := "2.11.6",
+     scalaVersion := "2.11.8",
      licenses := Seq("Apache License, Version 2.0"->new URL("http://www.apache.org/licenses/LICENSE-2.0.html")),
      libraryDependencies ++= dependencies,
      autoCompilerPlugins := true
@@ -46,7 +46,7 @@ object SSoup extends Build {
    )
 
    def dependencies = Seq(
-     "org.jsoup" % "jsoup" % "1.7.2",
+     "org.jsoup" % "jsoup" % "1.9.2",
      "org.specs2" % "specs2_2.11" % "2.4.2-scalaz-7.0.6",
      "org.mockito" % "mockito-all" % "1.9.0" % "test",
      "org.scala-lang.modules" %% "scala-xml" % "1.0.1"
