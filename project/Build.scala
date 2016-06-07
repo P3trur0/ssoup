@@ -3,17 +3,17 @@ import Keys._
 import java.net.URL
 
 object SSoup extends Build {
-   
+
    val project = (Project("ssoup", file(".")) settings(
      organization := "org.filippodeluca.ssoup",
      name := "ssoup",
      version := "1.0-SNAPSHOT",
-     scalaVersion := "2.11.2",
+     scalaVersion := "2.11.6",
      licenses := Seq("Apache License, Version 2.0"->new URL("http://www.apache.org/licenses/LICENSE-2.0.html")),
      libraryDependencies ++= dependencies,
      autoCompilerPlugins := true
    ) settings(publishSettings:_*))
-   
+
    def publishSettings: Seq[Setting[_]] = Seq(
      // If we want on maven central, we need to be in maven style.
      publishMavenStyle := true,
@@ -44,14 +44,12 @@ object SSoup extends Build {
          </developer>
        </developers>)
    )
-   
+
    def dependencies = Seq(
      "org.jsoup" % "jsoup" % "1.7.2",
-
      "org.specs2" % "specs2_2.11" % "2.4.2-scalaz-7.0.6",
      "org.mockito" % "mockito-all" % "1.9.0" % "test",
      "org.scala-lang.modules" %% "scala-xml" % "1.0.1"
    )
-   
-   
+
 }
