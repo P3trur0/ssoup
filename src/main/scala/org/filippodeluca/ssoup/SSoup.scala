@@ -24,6 +24,7 @@ import scala.concurrent.duration.Duration
 import collection.JavaConverters._
 import java.io.{File, InputStream}
 import org.jsoup.parser.Parser
+import scala.language.implicitConversions
 
 /**
  * The entry point of the Pimp-my-library pattern.
