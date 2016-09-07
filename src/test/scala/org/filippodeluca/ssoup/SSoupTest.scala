@@ -1,10 +1,11 @@
 package org.filippodeluca.ssoup
 
-import org.specs2.mutable.Specification
 import SSoup._
-import org.jsoup.nodes.{Node, Element}
+import org.jsoup.nodes.{ Node, Element }
+import org.scalatest.Matchers
+import org.scalatest.FlatSpec
 
-class SSoupTest extends Specification {
+class SSoupTest extends FlatSpec with Matchers {
 
   val html =
     """
@@ -17,33 +18,22 @@ class SSoupTest extends Specification {
       |</html>
     """.stripMargin
 
+  "SSoup" should "Return RichDocument" in {
+    val doc: RichDocument = parse(html)
+    doc shouldBe a [RichDocument]
+  }
 
-  "SSoup" should {
-    "Return RichDocument" in {
+  it should "Return RichElement" in {
+    val doc = parse(html)
+    val head: RichElement = doc.head
+    head shouldBe a [RichElement]
+  }
 
-      val doc: RichDocument = parse(html)
-
-      doc must beAnInstanceOf[RichDocument]
-    }
-    "Return RichElement" in {
-
-      val doc = parse(html)
-
-      val head: RichElement = doc.head
-
-      head must beAnInstanceOf[RichElement]
-    }
-    "Return RichElements" in {
-
-      val doc = parse(html)
-
-      val head = doc.head
-
-      val xs: RichElements = head.getElementsByAttributeStarting("foo")
-
-      xs must beAnInstanceOf[RichElements]
-    }
-
+  it should "Return RichElements" in {
+    val doc = parse(html)
+    val head = doc.head
+    val xs: RichElements = head.getElementsByAttributeStarting("foo")
+    xs shouldBe a[RichElements]
   }
 
 }

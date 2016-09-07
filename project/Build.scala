@@ -48,9 +48,7 @@ object SSoup extends Build {
    
    def dependencies = Seq(
      "org.jsoup" % "jsoup" % "1.7.2",
-
-     "org.specs2" % "specs2_2.10" % "1.14" % "test",
-     "org.mockito" % "mockito-all" % "1.9.0" % "test"
+     "org.scalatest" %% "scalatest" % "3.0.0" % "test"
    )
    
    
