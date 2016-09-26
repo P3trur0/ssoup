@@ -34,4 +34,9 @@ class RichNode(node: Node) {
 
   def apply(name: String): String = attrOpt(name).get
 
+  def absUrlOpt(attributeKey:String): Option[String] = node.absUrl(attributeKey) match {
+    case "" => None
+    case x => Some(x)
+  }
+  
 }

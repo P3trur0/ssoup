@@ -1,9 +1,9 @@
 target
-
+.gitignore
 .idea
 .idea_modules
 .iml
-
+.history
 .DS_Store
 
 /bin/

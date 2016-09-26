@@ -21,6 +21,7 @@ import org.jsoup.nodes._
 import org.jsoup.Jsoup
 import java.net.URL
 import scala.concurrent.duration.Duration
+import scala.language.implicitConversions
 import collection.JavaConverters._
 import java.io.{File, InputStream}
 import org.jsoup.parser.Parser
